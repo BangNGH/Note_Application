@@ -17,7 +17,9 @@ import com.example.note.R;
 import com.example.note.entities.Note;
 import com.example.note.listeners.NotesListener;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder>{
@@ -85,26 +87,21 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             }else {
                 gradientDrawable.setColor(Color.parseColor("#333333"));
             }
-//            if (note.getImagePath() != null) {
-//                Picasso.get().load(new File(note.getImagePath())).into(imageNote);
+
+
+//            if (note.getImagePath() != null)    {
+//                imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
 //                imageNote.setVisibility(View.VISIBLE);
-//            } else {
+//            }else {
 //                imageNote.setVisibility(View.GONE);
 //            }
-
-//            if (selectedImageUri != null) {
-//                Picasso.get().load(selectedImageUri).into(imageNote);
-//                imageNote.setVisibility(View.VISIBLE);
-//            } else {
-//                imageNote.setVisibility(View.GONE);
-//            }
-
-            if (note.getImagePath() != null)    {
-                imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
+            if (note.getImagePath() != null) {
+                Picasso.get().load(new File(note.getImagePath())).into(imageNote);
                 imageNote.setVisibility(View.VISIBLE);
-            }else {
+            } else {
                 imageNote.setVisibility(View.GONE);
             }
+
         }
 
 

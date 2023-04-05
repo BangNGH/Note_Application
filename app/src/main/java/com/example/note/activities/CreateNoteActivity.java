@@ -134,7 +134,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             selectImagePath = alreadyAvailableNote.getImagePath();
         }
 
-        if (alreadyAvailableNote.getWebLink() != null && alreadyAvailableNote.getWebLink().trim().isEmpty()) {
+        if (alreadyAvailableNote.getWebLink() != null && !alreadyAvailableNote.getWebLink().trim().isEmpty()) {
             textWebURL.setText(alreadyAvailableNote.getWebLink());
             layoutWebURL.setVisibility(View.VISIBLE);
             findViewById(R.id.imageRemoveWebURL).setVisibility(View.VISIBLE);
